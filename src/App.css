@@ -78,7 +78,7 @@ h2 {
 
 .income-amount {
   font-weight: bold;
-  color: greenyellow;
+  color: green;
   font-size: 18px;
 }
 
@@ -118,17 +118,32 @@ ul > li {
 }
 
 .income {
-  border-left: 5px solid greenyellow !important;
+  border-left: 5px solid green !important;
 }
 
 .income:hover {
-  background: greenyellow;
+  background: green;
 }
 
 .btn-container {
   margin: 8px;
   display: flex;
   justify-content: space-between;
+}
+
+.all-exp {
+  font-weight: bold;
+  color: red;
+}
+
+.all-inc {
+  font-weight: bold;
+  color: green;
+}
+
+.all-tr {
+  font-weight: bold;
+  color: blue;
 }
 
 .transaction-button {
@@ -159,10 +174,11 @@ ul > li {
   margin: 5px;
   font-weight: bold;
   border: 1px solid #ccc;
+  color: white;
 }
 
 .income-btn {
-  background: greenyellow;
+  background: green;
 }
 
 .expense-btn {

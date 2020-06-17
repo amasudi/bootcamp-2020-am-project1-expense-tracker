@@ -6,9 +6,13 @@ export const TransactionHistory = () => {
     <div className="card-container">
       <h2>{mainHeading}</h2>
       <div className="btn-container">
-        <button className="transaction-button">Income Transactions</button>
-        <button className="transaction-button">Expense Transactions</button>
-        <button className="transaction-button">All Transactions</button>
+        <button className="transaction-button all-inc">
+          Income Transactions
+        </button>
+        <button className="transaction-button all-exp">
+          Expense Transactions
+        </button>
+        <button className="transaction-button all-tr">All Transactions</button>
       </div>
       <ul className="transaction-list">
         <li className="income">
