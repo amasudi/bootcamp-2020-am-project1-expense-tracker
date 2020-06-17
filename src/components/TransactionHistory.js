@@ -5,10 +5,10 @@ export const TransactionHistory = () => {
   return (
     <div className="card-container">
       <h2>{mainHeading}</h2>
-      <div>
-        <button className="transaction-button">All Transactions</button>
+      <div className="btn-container">
         <button className="transaction-button">Income Transactions</button>
-        <button className="transaction-button">ExpenseTransactions</button>
+        <button className="transaction-button">Expense Transactions</button>
+        <button className="transaction-button">All Transactions</button>
       </div>
       <ul className="transaction-list">
         <li className="income">

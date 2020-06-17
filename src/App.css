@@ -26,8 +26,7 @@ h1 {
 
 h2 {
   font-size: 26px;
-  margin-bottom: 2px;
-  margin-top: 8px;
+  margin: 0;
 }
 
 .card-container {
@@ -42,10 +41,16 @@ h2 {
   margin-right: auto;
 }
 
+.income-expense {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .total-income-expense {
-  width: 40%;
+  width: 50%;
   padding: 8px;
-  display: inline-block;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   margin: 12px 5px;
@@ -93,12 +98,15 @@ ul {
 
 ul > li {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   background: white;
   padding: 5px;
   margin: 5px;
   border: 1px solid #ccc;
   text-align: left;
+  -webkit-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
 }
 
 .expense {
@@ -117,8 +125,46 @@ ul > li {
   background: greenyellow;
 }
 
+.btn-container {
+  margin: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .transaction-button {
   min-width: 30%;
   margin-left: 5px;
   margin-right: 5px;
+  padding: 5px;
+}
+
+.transaction-form {
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.transaction-form label {
+  text-align: left;
+  font-weight: bold;
+  float: left;
+}
+
+.transaction-form input {
+  width: 100%;
+  float: left;
+}
+
+.btn {
+  width: 45%;
+  margin: 5px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+
+.income-btn {
+  background: greenyellow;
+}
+
+.expense-btn {
+  background: red;
 }
