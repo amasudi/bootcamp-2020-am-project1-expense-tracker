@@ -1,38 +1,124 @@
-.App {
+body {
+  background-color: #666666;
+  font-family: Calibri;
+}
+#root {
+  display: flex;
+  justify-content: center;
   text-align: center;
+  width: 30%;
+  min-width: 300px;
+  margin: auto;
+  background-image: linear-gradient(black, grey);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  -webkit-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  font-size: 26px;
+  margin-bottom: 2px;
+  margin-top: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-container {
+  background-image: linear-gradient(grey, white);
+  -webkit-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.total-income-expense {
+  width: 40%;
+  padding: 8px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 12px 5px;
+  -webkit-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+  box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
+}
+
+.total-balance {
+  width: 80%;
+  border-top: 1px solid #888;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #888;
+  padding-bottom: 8px;
+}
+
+.expense-amount {
+  font-weight: bold;
+  color: red;
+  font-size: 18px;
+}
+
+.income-amount {
+  font-weight: bold;
+  color: greenyellow;
+  font-size: 18px;
+}
+
+.balance-amount {
+  font-weight: bold;
+  color: blue;
+  font-size: 24px;
+}
+
+ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style-type: none;
+  padding: 0 10px 10px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+ul > li {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.expense {
+  border-left: 5px solid red !important;
+}
+
+.expense:hover {
+  background: red;
+}
+
+.income {
+  border-left: 5px solid greenyellow !important;
+}
+
+.income:hover {
+  background: greenyellow;
+}
+
+.transaction-button {
+  min-width: 30%;
+  margin-left: 5px;
+  margin-right: 5px;
 }
