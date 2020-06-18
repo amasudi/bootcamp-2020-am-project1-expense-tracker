@@ -5,7 +5,7 @@ import { GlobalContext } from "../contexts/GlobalContext";
 export const AddTransaction = () => {
   let { transactions, handleTransactions } = useContext(GlobalContext);
   let [newDescription, setDescription] = useState("");
-  let [newAmount, setAmount] = useState(1);
+  let [newAmount, setAmount] = useState("");
   let calculateSummary = (type) => {
     let total = 0;
     transactions.forEach((transaction) => {
@@ -16,7 +16,7 @@ export const AddTransaction = () => {
     return total;
   };
   let handleAddTransaction = (type) => {
-    if (newDescription === "" || newAmount === "") {
+    if (newDescription === "" || newAmount === "" || newAmount === "0") {
       alert("Please fill all the fields.");
     } else {
       let balance = calculateSummary("income") - calculateSummary("expense");
@@ -30,7 +30,7 @@ export const AddTransaction = () => {
           amount: Number(newAmount),
         });
         setDescription("");
-        setAmount(1);
+        setAmount("");
       }
     }
   };
@@ -57,7 +57,7 @@ export const AddTransaction = () => {
         <input
           name="amount"
           type="number"
-          min="1"
+          min="0"
           value={newAmount}
           placeholder="Add Amount"
           autoComplete="off"
