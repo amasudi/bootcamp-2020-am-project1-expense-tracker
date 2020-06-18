@@ -7,6 +7,12 @@ export const AppReducer = (state, action) => {
       break;
     case "REMOVE":
       {
+        let newTrans = state.transactions.filter(
+          (transaction) => transaction.id !== action.payload.id
+        );
+        return {
+          transactions: newTrans,
+        };
       }
       break;
     default:

@@ -3,16 +3,22 @@ import React, { useState, useContext } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
 
 export const AddTransaction = () => {
-  let { transactions, addTransaction } = useContext(GlobalContext);
+  let { transactions, handleTransactions } = useContext(GlobalContext);
   let [newDescription, setDescription] = useState("");
   let [newAmount, setAmount] = useState(1);
   let handleAddTransaction = (type) => {
-    addTransaction({
-      id: transactions.length,
-      type: type,
-      description: newDescription,
-      amount: Number(newAmount),
-    });
+    if (newDescription === "" || newAmount === "") {
+      alert("Please fill all the fields.");
+    } else {
+      handleTransactions("ADD", {
+        id: transactions.length + 1,
+        type: type,
+        description: newDescription,
+        amount: Number(newAmount),
+      });
+    }
+    setDescription("");
+    setAmount(1);
   };
   return (
     <div className="card-container">

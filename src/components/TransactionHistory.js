@@ -6,10 +6,8 @@ import { Transaction } from "./Transaction";
 export const TransactionHistory = () => {
   let { transactions } = useContext(GlobalContext);
   let [mainHeading, setMainHeading] = useState("All Transactions");
-  //let [currentFilter, setFilter] = useState("");
   let [allTransactions, setAllTransactions] = useState(transactions);
   let filterTransactions = (type) => {
-    //    setFilter(type);
     switch (type) {
       case "income":
         setMainHeading("Income Transactions");
