@@ -37,7 +37,7 @@ export const AddTransaction = () => {
   return (
     <div className="card-container">
       <div className="transaction-form">
-        <h2>Add New Transaction</h2>
+        <h2>Add Transaction</h2>
         <label htmlFor="doscription">Description:</label>
         <br />
         <input
