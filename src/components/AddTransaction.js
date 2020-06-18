@@ -6,19 +6,33 @@ export const AddTransaction = () => {
   let { transactions, handleTransactions } = useContext(GlobalContext);
   let [newDescription, setDescription] = useState("");
   let [newAmount, setAmount] = useState(1);
+  let calculateSummary = (type) => {
+    let total = 0;
+    transactions.forEach((transaction) => {
+      if (transaction.type === type) {
+        total += transaction.amount;
+      }
+    });
+    return total;
+  };
   let handleAddTransaction = (type) => {
     if (newDescription === "" || newAmount === "") {
       alert("Please fill all the fields.");
     } else {
-      handleTransactions("ADD", {
-        id: transactions.length + 1,
-        type: type,
-        description: newDescription,
-        amount: Number(newAmount),
-      });
+      let balance = calculateSummary("income") - calculateSummary("expense");
+      if (Number(newAmount) > balance) {
+        alert("You don't have that much money to spend.");
+      } else {
+        handleTransactions("ADD", {
+          id: transactions.length + 1,
+          type: type,
+          description: newDescription,
+          amount: Number(newAmount),
+        });
+        setDescription("");
+        setAmount(1);
+      }
     }
-    setDescription("");
-    setAmount(1);
   };
   return (
     <div className="card-container">
