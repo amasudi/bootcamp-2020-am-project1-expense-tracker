@@ -20,7 +20,7 @@ export const AddTransaction = () => {
       alert("Please fill all the fields.");
     } else {
       let balance = calculateSummary("income") - calculateSummary("expense");
-      if (Number(newAmount) > balance) {
+      if (type === "expense" && Number(newAmount) > balance) {
         alert("You don't have that much money to spend.");
       } else {
         handleTransactions("ADD", {
