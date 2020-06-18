@@ -3,16 +3,16 @@ body {
   font-family: Calibri;
 }
 #root {
-  display: flex;
   justify-content: center;
   text-align: center;
-  width: 30%;
+  width: 25%;
   min-width: 300px;
   margin: auto;
   background-image: linear-gradient(black, grey);
   color: white;
   border-radius: 10px;
   padding: 5px;
+  margin-top: 20px;
   -webkit-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
   -moz-box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
   box-shadow: -2px 2px 12px 4px rgba(0, 0, 0, 0.76);
@@ -26,6 +26,11 @@ h1 {
 
 h2 {
   font-size: 26px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 22px;
   margin: 0;
 }
 
@@ -115,6 +120,7 @@ ul > li {
 
 .expense:hover {
   background: red;
+  color: white;
 }
 
 .income {
@@ -123,6 +129,7 @@ ul > li {
 
 .income:hover {
   background: green;
+  color: white;
 }
 
 .btn-container {
@@ -148,13 +155,14 @@ ul > li {
 
 .transaction-button {
   min-width: 30%;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 2px;
+  font-size: 11px;
 }
 
 .transaction-form {
-  padding: 30px;
+  padding: 12px 20px;
   margin-bottom: 20px;
 }
 
@@ -167,6 +175,7 @@ ul > li {
 .transaction-form input {
   width: 100%;
   float: left;
+  padding: 5px;
 }
 
 .btn {
@@ -175,6 +184,8 @@ ul > li {
   font-weight: bold;
   border: 1px solid #ccc;
   color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .income-btn {

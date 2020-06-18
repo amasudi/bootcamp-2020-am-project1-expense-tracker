@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useReducer } from "react";
 import "./App.css";
+
+import { GlobalProvider } from "./contexts/GlobalContext";
 
 import { Header } from "./components/Header";
 import { Balance } from "./components/Balance";
@@ -8,12 +10,12 @@ import { AddTransaction } from "./components/AddTransaction";
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
       <Balance />
       <TransactionHistory />
       <AddTransaction />
-    </div>
+    </GlobalProvider>
   );
 }
 
