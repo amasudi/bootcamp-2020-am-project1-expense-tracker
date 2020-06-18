@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import { GlobalContext } from "../contexts/GlobalContext";
 
 export const AddTransaction = () => {
-  const [newDescription, setDescription] = useState();
-  const [newAmount, setAmount] = useState();
+  let { transactions, addTransaction } = useContext(GlobalContext);
+  let [newDescription, setDescription] = useState("");
+  let [newAmount, setAmount] = useState(1);
+  let handleAddTransaction = (type) => {
+    addTransaction({
+      id: transactions.length,
+      type: type,
+      description: newDescription,
+      amount: Number(newAmount),
+    });
+  };
   return (
     <div className="card-container">
-      <form className="transaction-form">
+      <div className="transaction-form">
         <h2>Add New Transaction</h2>
         <label htmlFor="doscription">Description:</label>
         <br />
@@ -14,7 +25,8 @@ export const AddTransaction = () => {
           type="text"
           value={newDescription}
           placeholder="Add Description"
-          onchange={(e) => {
+          autoComplete="off"
+          onChange={(e) => {
             setDescription(e.target.value);
           }}
           required
@@ -28,15 +40,26 @@ export const AddTransaction = () => {
           min="1"
           value={newAmount}
           placeholder="Add Amount"
-          onchange={(e) => {
+          autoComplete="off"
+          onChange={(e) => {
             setAmount(e.target.value);
           }}
           required
         />
         <br />
-        <button className="btn income-btn">Add Income</button>
-        <button className="btn expense-btn">Add Expense</button>
-      </form>
+        <button
+          className="btn income-btn"
+          onClick={() => handleAddTransaction("income")}
+        >
+          Add Income
+        </button>
+        <button
+          className="btn expense-btn"
+          onClick={() => handleAddTransaction("expense")}
+        >
+          Add Expense
+        </button>
+      </div>
     </div>
   );
 };
