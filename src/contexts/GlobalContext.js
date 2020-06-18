@@ -54,6 +54,7 @@ export const GlobalProvider = ({ children }) => {
           type: type,
           payload: { id: transObj.id },
         });
+        break;
     }
   };
 
